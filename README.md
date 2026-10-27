@@ -5,7 +5,7 @@
 ## 1. Motivation and Baseline
 
 Many engineering workflows require a compact representation of shapes. One example is numerical shape optimization, such as minimizing the drag of a body in a flow in aerospace applications.
-The use of neural signed distance functions (SDFs) are a promising approach for these kinds of problems.
+The use of neural signed distance functions (SDFs) is a promising approach for these kinds of problems.
 Ideally, the representation of geometry should:
 
 * represent different shapes using few variables,
@@ -60,10 +60,10 @@ In the baseline, the lattice is fixed and regular. Here, each node's displacemen
 
 ## 3. Datasets
 
-| Purpose              | Data                                                                                                                                                                                                     | Source                 |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| Training             | Self-generated 2D scenes of primitives (polygons, ellipses, their unions and differences) with analytic SDF values                                                                                       | generated (as in \[1]) |
-| Test (unseen shapes) | [MPEG-7 CE-Shape-1](https://timeseriesclassification.com/description.php?Dataset=ShapesAll): 1400 binary silhouettes in 70 classes; a fixed subset of 70 shapes (one per class) converted to SDF samples | public                 |
+| Purpose              | Data                                                                                                                                                                                          | Source                 |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Training             | Self-generated 2D scenes of primitives (polygons, ellipses, their unions and differences) with analytic SDF values                                                                            | generated (as in \[1]) |
+| Test (unseen shapes) | [MPEG-7 CE-Shape-1](https://cis.temple.edu/~latecki/TestData/mpeg7shapeB.tar.gz): 1400 binary silhouettes in 70 classes; a fixed subset of 70 shapes (one per class) converted to SDF samples | public                 |
 
 ## 4. Error Metric and Target
 
@@ -84,7 +84,7 @@ In the baseline, the lattice is fixed and regular. Here, each node's displacemen
 
 | #         | Task                                                                                                                             | Hours  |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| 1         | **Dataset collection:** primitive scene generator; convertig MPEG-7 subset to SDF samples                                        | 6      |
+| 1         | **Dataset collection:** primitive scene generator; converting MPEG-7 subset to SDF samples                                       | 6      |
 | 2         | **Network design and implementation:** baseline                                                                                  | 4      |
 | 3         | **Network design and implementation:** quantum decoder                                                                           | 10     |
 | 4         | **Network design and implementation:** network-adapted lattice                                                                   | 10     |
@@ -96,11 +96,11 @@ In the baseline, the lattice is fixed and regular. Here, each node's displacemen
 
 ## References
 
-[\[1.\]](https://www.aimsciences.org/article/doi/10.3934/acse.2026013) L. Freinberger, K. Key, M. Kofler, D. Breinl, W\.-G. Drossel, M. Büttner, K. Roder, S. Elgeti.
+[\[1\]](https://www.aimsciences.org/article/doi/10.3934/acse.2026013) L. Freinberger, K. Key, M. Kofler, D. Breinl, W\.-G. Drossel, M. Büttner, K. Roder, S. Elgeti.
 *Shape optimization using a neural implicit geometry representation.* Advances in Computational
 Science and Engineering 9 (2026), 97–124. doi:10.3934/acse.2026013
 
-[\[2.\]](https://ieeexplore.ieee.org/document/8954065) J. J. Park, P. Florence, J. Straub, R. Newcombe, S. Lovegrove. *DeepSDF: Learning Continuous Signed
+[\[2\]](https://ieeexplore.ieee.org/document/8954065) J. J. Park, P. Florence, J. Straub, R. Newcombe, S. Lovegrove. *DeepSDF: Learning Continuous Signed
 Distance Functions for Shape Representation.* CVPR 2019.
 
-[\[3.\]](https://4dqv.mpi-inf.mpg.de/QVF/) S. Wang, C. Theobalt, V. Golyanik. *Quantum Visual Fields with Neural Amplitude Encoding.* NeurIPS 2025.
+[\[3\]](https://4dqv.mpi-inf.mpg.de/QVF/) S. Wang, C. Theobalt, V. Golyanik. *Quantum Visual Fields with Neural Amplitude Encoding.* NeurIPS 2025.
