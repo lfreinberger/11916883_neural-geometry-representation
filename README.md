@@ -60,10 +60,10 @@ In the baseline, the lattice is fixed and regular. Here, each node's displacemen
 
 ## 3. Datasets
 
-| Purpose              | Data                                                                                                                                                                                          | Source                 |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| Training             | Self-generated 2D scenes of primitives (polygons, ellipses, their unions and differences) with analytic SDF values                                                                            | generated (as in \[1]) |
-| Test (unseen shapes) | [MPEG-7 CE-Shape-1](https://cis.temple.edu/~latecki/TestData/mpeg7shapeB.tar.gz): 1400 binary silhouettes in 70 classes; a fixed subset of 70 shapes (one per class) converted to SDF samples | public                 |
+| Purpose              | Data                                                                                                                                                                                             | Source                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| Training             | Self-generated 2D scenes of primitives (polygons, ellipses, their unions and differences) with analytic SDF values                                                                               | generated (as in [\[1\]](https://www.aimsciences.org/article/doi/10.3934/acse.2026013)) |
+| Test (unseen shapes) | [MPEG-7 CE-Shape-1](https://cis.temple.edu/~latecki/TestData/mpeg7shapeB.tar.gz): 1400 binary silhouettes in 70 classes; a fixed subset of these shapes (one per class) converted to SDF samples | public                                                                                  |
 
 ## 4. Error Metric and Target
 
@@ -91,7 +91,8 @@ In the baseline, the lattice is fixed and regular. Here, each node's displacemen
 | 5         | **Training and fine-tuning:** all variants                                                                                       | 8      |
 | 6         | **Evaluation:** reconstruction benchmark, error-vs-variables curves, figures                                                     | 3      |
 | 7         | **Application:** Choose a shape, a variant, and a variable budget; show the reconstruction, lattice, and error map side by side. | 4      |
-| 8         | **Final report and presentation**                                                                                                | 10     |
+| 8         | **Final report**                                                                                                                 | 6      |
+| 9         | **Presentation**                                                                                                                 | 4      |
 | **Total** | <br />                                                                                                                           | **55** |
 
 ## References
