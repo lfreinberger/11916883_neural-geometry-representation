@@ -1,4 +1,4 @@
-# Improving Neural Shape Representations with Local Latent Fields
+# Assignment 1: Improving Neural Shape Representations with Local Latent Fields
 
 **Project type**: Bring your own method
 
@@ -105,3 +105,15 @@ Science and Engineering 9 (2026), 97–124. doi:10.3934/acse.2026013
 Distance Functions for Shape Representation.* CVPR 2019.
 
 [\[3\]](https://4dqv.mpi-inf.mpg.de/QVF/) S. Wang, C. Theobalt, V. Golyanik. *Quantum Visual Fields with Neural Amplitude Encoding.* NeurIPS 2025.
+
+# Assignment 2
+
+## Getting Started
+
+Requires [uv](https://docs.astral.sh/uv/). Python 3.12 is installed automatically.
+
+```bash
+uv sync          # create the environment
+uv run pytest    # run the tests
+```
+

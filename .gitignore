@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+build/
+dist/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+
+# Data, checkpoints and experiment outputs (published separately, never committed)
+data/
+checkpoints/
+outputs/
+multirun/
+mlruns/
+mlartifacts/
+mlflow.db
+
+# OS
+.DS_Store
