@@ -117,3 +117,14 @@ uv sync          # create the environment
 uv run pytest    # run the tests
 ```
 
+### Data
+
+The training scenes are generated from a seed and need no download.
+The MPEG-7 CE-Shape-1 silhouettes used for validation and testing are downloaded once by hand:
+
+```bash
+mkdir -p data/mpeg7
+curl -L https://cis.temple.edu/~latecki/TestData/mpeg7shapeB.tar.gz | tar xz -C data/mpeg7
+```
+
+This creates `data/mpeg7/original/` with 1400 GIF files. The `data/` folder is not tracked by git.
