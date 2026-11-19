@@ -21,3 +21,6 @@ mlflow.db
 
 # OS
 .DS_Store
+
+# Personal exploration notebooks
+notebooks/
