@@ -22,5 +22,6 @@ mlflow.db
 # OS
 .DS_Store
 
-# Personal exploration notebooks
+# Personal exploration notebooks and scripts
 notebooks/
+sandbox/
