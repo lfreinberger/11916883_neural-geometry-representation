@@ -1,0 +1,40 @@
+defaults:
+  - _self_
+  - model: v0
+
+experiment: baseline
+seed: 0
+# validate on heldout and mpeg7_val every n training steps, 0 = only at the end
+eval_every: 2000
+
+data:
+  n_train: 400
+  n_heldout: 50
+  n_points: 2000
+  n_points_val: 4000
+  train_seed: 0
+  heldout_seed: 1
+  mpeg7_dir: data/mpeg7/original
+
+# same loss for training, reconstruction and the spline reference
+loss:
+  delta: 0.1
+  beta: 1.0e-4
+
+train:
+  steps: 16000
+  shapes_per_step: 16
+  points_per_step: 256
+  lr_decoder: 5.0e-4
+  lr_codes: 5.0e-3
+  init_std: 0.01
+  lr_decay_at: 0.7
+  lr_decay: 0.2
+
+reconstruct:
+  steps: 1500
+  points_per_step: 1024
+  lr_codes: 5.0e-3
+  unclamped_warmup: 0.2
+  lr_decay_at: 0.7
+  lr_decay: 0.2

@@ -1,0 +1,8 @@
+name: v0
+n_ctrl: 5
+degree: 1
+code_length: 4
+decoder: mlp
+hidden: 128
+layers: 4
+activation: relu

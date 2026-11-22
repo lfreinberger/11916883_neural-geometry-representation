@@ -1,0 +1,12 @@
+# @package _global_
+# no decoder
+model:
+  name: spline
+  n_ctrl: 10
+  degree: 2
+  code_length: 1
+  decoder: null
+
+# code reg is a prior for latent codes, it only pulls spline coefficients towards 0
+loss:
+  beta: 0.0
