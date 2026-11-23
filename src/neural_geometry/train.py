@@ -117,7 +117,7 @@ def main(cfg: DictConfig) -> None:
 
             scenes = primitive_scenes(cfg.data.n_train, cfg.data.train_seed)
             points, sdf = to_tensors(scenes, cfg.data.n_points, cfg.data.train_seed, device)
-            fit(
+            train_codes = fit(
                 model,
                 points,
                 sdf,
@@ -127,7 +127,9 @@ def main(cfg: DictConfig) -> None:
                 on_step=on_train_step,
             )
             torch.save(model.state_dict(), out_dir / "model.pt")
+            torch.save(train_codes.cpu(), out_dir / "codes_train.pt")
             mlflow.log_artifact(str(out_dir / "model.pt"))
+            mlflow.log_artifact(str(out_dir / "codes_train.pt"))
 
         for name, (points, sdf) in val_data.items():
             log.info(f"reconstructing {name} ({len(points)} shapes)")
