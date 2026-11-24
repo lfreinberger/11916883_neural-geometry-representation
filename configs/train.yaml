@@ -19,11 +19,11 @@ data:
 # same loss for training, reconstruction and the spline reference
 loss:
   delta: 0.1
-  beta: 1.0e-4
+  beta: 0.0
 
 train:
   steps: 16000
-  shapes_per_step: 16
+  shapes_per_step: 64
   points_per_step: 256
   lr_decoder: 5.0e-4
   lr_codes: 5.0e-3
@@ -32,9 +32,8 @@ train:
   lr_decay: 0.2
 
 reconstruct:
-  steps: 1500
+  steps: 4000
   points_per_step: 1024
-  lr_codes: 5.0e-3
-  unclamped_warmup: 0.2
+  lr_codes: 2.0e-2
   lr_decay_at: 0.7
   lr_decay: 0.2

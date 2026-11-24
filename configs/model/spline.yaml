@@ -10,3 +10,7 @@ model:
 # code reg is a prior for latent codes, it only pulls spline coefficients towards 0
 loss:
   beta: 0.0
+
+reconstruct:
+  steps: 1500
+  lr_codes: 5.0e-3

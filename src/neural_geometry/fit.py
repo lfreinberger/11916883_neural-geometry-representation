@@ -24,7 +24,6 @@ def fit(
     lr_decoder: float = 0.0,
     shapes_per_step: int | None = None,
     init_std: float = 0.0,
-    unclamped_warmup: float = 0.0,
     lr_decay_at: float = 1.0,
     lr_decay: float = 1.0,
     seed: int = 0,
@@ -59,10 +58,7 @@ def fit(
         pred = model(codes[batch], points[rows, idx])
         # sum over the control points as in the paper, mean over shapes
         reg = codes[batch].pow(2).sum(dim=(1, 2, 3)).mean()
-        # no clamp at the start: if the decoder starts outside +-delta with the wrong sign,
-        # the clamped loss has no gradient there and the reconstruction never recovers
-        clamp = delta if step >= unclamped_warmup * steps else float("inf")
-        loss = clamped_l1(pred, sdf[rows, idx], clamp) + beta * reg
+        loss = clamped_l1(pred, sdf[rows, idx], delta) + beta * reg
 
         optimizer.zero_grad()
         loss.backward()

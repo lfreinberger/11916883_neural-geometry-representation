@@ -1,8 +1,8 @@
 name: v0
-n_ctrl: 5
+n_ctrl: 8
 degree: 1
-code_length: 4
+code_length: 2
 decoder: mlp
 hidden: 128
 layers: 4
-activation: relu
+activation: silu
