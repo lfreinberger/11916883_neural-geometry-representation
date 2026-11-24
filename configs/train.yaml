@@ -6,6 +6,8 @@ experiment: baseline
 seed: 0
 # validate on heldout and mpeg7_val every n training steps, 0 = only at the end
 eval_every: 2000
+# grid for chamfer, iou and topology, spacing 2 / (resolution - 1)
+eval_resolution: 256
 
 data:
   n_train: 400
