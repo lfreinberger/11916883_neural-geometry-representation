@@ -1,8 +1,8 @@
 defaults:
   - _self_
-  - model: v0
+  - model: baseline
 
-experiment: baseline
+experiment: neural-geometry
 seed: 0
 # validate on heldout and mpeg7_val every n training steps, 0 = only at the end
 eval_every: 2000

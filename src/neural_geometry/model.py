@@ -1,4 +1,4 @@
-"""Latent field SDF (baseline V0) and the plain B-spline SDF used as reference."""
+"""Latent field SDF shared by all models, its mlp decoder and the B-spline reference."""
 
 import torch
 from torch import nn
