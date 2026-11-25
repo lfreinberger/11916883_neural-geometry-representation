@@ -1,6 +1,7 @@
 """Train the decoder on primitive scenes, then reconstruct held-out scenes and MPEG-7 val.
 
-uv run python -m neural_geometry.train                 # baseline V0
+uv run python -m neural_geometry.train                 # baseline
+uv run python -m neural_geometry.train model=quantum   # quantum decoder
 uv run python -m neural_geometry.train model=spline    # B-spline reference, nothing to train
 """
 
@@ -20,6 +21,7 @@ from neural_geometry import mpeg7
 from neural_geometry.evaluate import evaluate, predict_grid, sdf_grid, summarize
 from neural_geometry.fit import clamped_l1, fit
 from neural_geometry.model import LatentSDF, mlp
+from neural_geometry.quantum import QNN
 from neural_geometry.shapes import primitive_scenes, sample_dataset
 
 log = logging.getLogger(__name__)
@@ -29,6 +31,8 @@ def build_model(cfg: DictConfig) -> LatentSDF:
     decoder = None
     if cfg.decoder == "mlp":
         decoder = mlp(cfg.code_length + 2, cfg.hidden, cfg.layers, cfg.activation)
+    elif cfg.decoder == "qnn":
+        decoder = QNN(cfg.code_length + 2, cfg.n_qubits, cfg.blocks)
     return LatentSDF(cfg.n_ctrl, cfg.degree, cfg.code_length, decoder)
 
 
@@ -136,6 +140,7 @@ def main(cfg: DictConfig) -> None:
     with mlflow.start_run(run_name=cfg.model.name):
         mlflow.log_params(flat_params(cfg))
         mlflow.log_param("budget", cfg.model.n_ctrl**2 * cfg.model.code_length)
+        mlflow.log_param("decoder_params", sum(p.numel() for p in model.parameters()))
 
         steps = 0
         if model.decoder is not None:

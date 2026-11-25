@@ -1,0 +1,15 @@
+# @package _global_
+# same lattice and budget as baseline, only the decoder is replaced
+model:
+  name: quantum
+  n_ctrl: 8
+  degree: 1
+  code_length: 2
+  decoder: qnn
+  # at least code_length + 2, extra qubits get the inputs again (qubit 4 -> input 0)
+  n_qubits: 5
+  blocks: 6
+
+# ~100 circuit parameters instead of ~50k mlp weights, they need a larger step
+train:
+  lr_decoder: 5.0e-3
